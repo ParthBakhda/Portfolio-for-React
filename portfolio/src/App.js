@@ -38,3 +38,58 @@ const App = () => {
             {/* "C:\Users\bakhd\Desktop\bootcamp\Portfolio-for-React\Resume\Parth Bakhda Resume updated (1).docx"*/}
           </div>
         );
+        default:
+          return null;
+      }
+    };
+  
+    return (
+      <div className="App">
+        <header>
+          <h1>Parth Bakhda's Portfolio</h1>
+          <nav>
+            <ul>
+              <li
+                className={selectedSection === 'About Me' ? 'active' : ''}
+                onClick={() => handleNavigationClick('About Me')}
+              >
+                About Me
+              </li>
+              <li
+                className={selectedSection === 'Portfolio' ? 'active' : ''}
+                onClick={() => handleNavigationClick('Portfolio')}
+              >
+                Portfolio
+              </li>
+              <li
+                className={selectedSection === 'Contact' ? 'active' : ''}
+                onClick={() => handleNavigationClick('Contact')}
+              >
+                Contact
+              </li>
+              <li
+                className={selectedSection === 'Resume' ? 'active' : ''}
+                onClick={() => handleNavigationClick('Resume')}
+              >
+                Resume
+              </li>
+            </ul>
+          </nav>
+        </header>
+  
+        <section className="content">{renderSection()}</section>
+  
+        <footer>
+          <ul>
+            <li>
+              {/* https://github.com/ParthBakhda?tab=repositories */}
+              <a href="https://github.com">GitHub</a>
+            </li>
+          </ul>
+        </footer>
+      </div>
+    );
+  };
+  
+  export default App;
+  
